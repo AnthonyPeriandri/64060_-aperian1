@@ -1,0 +1,47 @@
+---
+title: "Periandri_Anthony_Assignment1_05-30-2025"
+author: "Anthony Periandri"
+date: "2025-05-31"
+output:
+  pdf_document: default
+  word_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+## load the csv file
+df<-read.csv("C:\\Users\\Antho\\Desktop\\KSU\\Machine Learning\\Assignment 1\\automobile.csv")
+## show the data
+head(df)
+```
+
+```{r}
+## Descriptive table showing values for wheel base and length
+summary(df[,c("wheel.base","length")])
+table(df$engine.location)
+table(df$fuel.type)
+## Mutate variable to show the log of lengths of vehicles
+df<-df %>%
+  mutate(log_Lengthofcar= log(length))
+summary(df[,c("log_Lengthofcar","length")])
+## histogram showing quantity of different length vehicle
+hist(df$length,
+     main = "Histogram of Car Length",
+     xlab = "length",
+     col = "red",
+     breaks = 10)
+## Scatterplot comparing Wheel base and length
+plot(df$wheel.base,df$length,
+     main = "Wheel Base VS Length",
+     xlab = "Wheel Base",
+     ylab = "Length",
+     col = "blue",
+     pch = 12)
+     
+```
