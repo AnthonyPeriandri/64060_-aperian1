@@ -52,3 +52,12 @@ cat("cluster vs location\n")
 print(table(dataset$cluster, dataset$Location))
 cat("cluster vs stock exchange\n")
 print(table(dataset$cluster, dataset$Exchange))
+## b. cluster 3 is established corporations, cluster 2 is poor market performers, 
+## cluster 1 is small companies with high growth
+## c. Those corporations in cluster 2 and 3 all are traded on the NYSE, 
+## corporations in cluster 3 are operated out
+## of the US or UK, No corporation in cluster 1 or 3 is a strong buy
+## d. cluster 1: Low Market Cap Cluster, Cluster 2: High Price Earnings Ratio Cluster, 
+## Cluster 3: High Return on Equity Cluster
+## Recommendations- Cluster 1: Hold, Cluster 2: High growth potential (BUY) 
+## Cluster 3: Hold or Sell for profit
